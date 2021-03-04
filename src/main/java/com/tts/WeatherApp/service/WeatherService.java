@@ -2,13 +2,19 @@ package com.tts.WeatherApp.service;
 
 import com.tts.WeatherApp.model.Response;
 
+import com.tts.WeatherApp.repository.ZipCodeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 
 @Service
 public class WeatherService {
+
+    @Autowired
+    ZipCodeRepository zipCodeRepository;
 
     @Value("${api_key}")
     private String apiKey;
